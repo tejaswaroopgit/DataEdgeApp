@@ -41,7 +41,6 @@ angular.module('myApp').controller('logoutController',
         });
 
     };
-
    
     $scope.home = function () {
         $location.path('/')
