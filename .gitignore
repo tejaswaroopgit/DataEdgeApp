@@ -3,3 +3,4 @@ _old
 .DS_Store
 .sqlite
 *.sqlite
+.vs/slnx.sqlite
