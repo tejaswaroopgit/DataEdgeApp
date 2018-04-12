@@ -28,6 +28,8 @@ angular.module('myApp').controller('loginController',
 
 }]);
 
+//logut
+
 angular.module('myApp').controller('logoutController',
   ['$scope', '$location', 'AuthService',
   function ($scope, $location, AuthService) {
