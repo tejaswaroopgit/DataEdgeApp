@@ -42,12 +42,27 @@ angular.module('myApp').controller('logoutController',
 
     };
 
+   
     $scope.home = function () {
         $location.path('/')
     };
 
+    $scope.goToConsultantRegisterpage = function () {
+        alert();
+        $location.path('/consultantRegister');
+    };
+
+    $scope.goToConsultantListPage = function () {
+        $location.path('/');
+    }
+    $scope.goToConsultantRegisterpage = function () {
+        $location.path('/');
+    }
+
+
 
 }]);
+
 
 angular.module('myApp').controller('registerController',
   ['$scope', '$location', 'AuthService',
@@ -77,4 +92,37 @@ angular.module('myApp').controller('registerController',
 
     };
 
-}]);
+        }]);
+
+angular.module('myApp').controller('homeController',
+    ['$scope', '$location', 'AuthService',
+        function ($scope, $location, AuthService) {
+
+            $scope.logout = function () {
+
+                // call logout from service
+                AuthService.logout()
+                    .then(function () {
+                        $location.path('/login');
+                    });
+
+            };
+
+
+            $scope.home = function () {
+                $location.path('/')
+            };
+
+            $scope.goToConsultantRegisterpage = function () {
+               
+                $location.path('/consultantRegister');
+            };
+
+            $scope.goToConsultantListPage = function () {
+                $location.path('/');
+            }
+          
+
+
+
+        }]);
