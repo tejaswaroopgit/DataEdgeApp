@@ -1,1 +1,57 @@
 <h1>Please find the List of consultants in this Page </h1>
+
+<div>
+    <!--<label for="search" style="font-size:25px">Search:</label>-->
+    <input type="search" style="background-color: skyblue;border-radius:30px;margin:10px 5px 0px 920px" ng-model="test" name="search" placeholder="Search.."><br>
+    no of emolpyees:{{count}}
+    <div>
+        <table class="table table-hover table">
+            <tr>
+                <th>ConsultantName</th>
+                <th>consultantLocation</th>
+                <th>consultantEmail</th>
+                <th>consultantDomain</th>
+                <th>ConsultantPrimarySkill</th>
+                <th>consultantSecodSkill</th>
+                <th>consultantVisa</th>
+                <th>consultantPhoneNum</th>
+                <th>consultantYearsOfExpierence</th>
+            </tr>
+
+            <tbody>
+                <tr ng-repeat="consultants in filteredItems | filter :test" >
+
+                    <td>{{consultants.consultantName | uppercase }}</td>
+                    <td>{{consultants.consultantLocation | uppercase}}</td>
+                    <td>{{ consultants.additionalComments}}</td>
+                    <td>{{consultants.consultantDomain}}</td>
+                    <td>{{consultants.primarySkill}}</td>
+                    <td>{{consultants.secondarySkill}}</td>
+                    <td>{{consultants.consultantVisaStatus}}</td>
+                    <td>{{consultants.consultantContactNum}}</td>
+                    <td>{{ consultants.totalYearsOfExpierence}}</td>
+                    <td data-title="'Action'" class="col-sm-2">
+
+                        <button type="button" ng-click="updateClient(consultants._id)" style="background-color: darkseagreen ;border-radius:5px">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </button>
+                        <button type="button" ng-click="deleteClient(consultants._id)" style="background-color: indianred;border-radius:5px ">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+
+       
+                    </td> 
+                </tr>
+
+            </tbody>
+
+
+        </table>
+        <!--<dir-pagination-controls></dir-pagination-controls>-->
+        Page {{curPage}} 
+           <div data-pagination="" data-num-pages="numOfPages()" 
+      data-current-page="curPage" data-max-size="maxSize"  
+      data-boundary-links="true"></div>
+    </div>
+    <!--<button class="btn btn-default" ui-sref="addDrivers">AddDriver</button>-->
+</div>

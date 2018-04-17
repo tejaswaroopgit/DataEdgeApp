@@ -122,6 +122,14 @@ angular.module('myApp').controller('homeController',
             $scope.goToConsultantListPage = function () {
                 $location.path('/');
             }
+
+            $scope.goToClientsPage = function () {
+                $location.path('/clientsList')
+            }
+
+            //$scope.goToClientsAddEditPage = function () {
+            //    $location.path('/addEditClients')
+            //}
           
 
 

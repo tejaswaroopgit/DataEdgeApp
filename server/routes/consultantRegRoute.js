@@ -8,13 +8,11 @@ var multer = require('multer')
 var consultantModel = require('../models/consultantRegister');
 var consultantApi = require('../Api/consultantRegApi');
 
+//const storage = require('multer-gridfs-storage')({
+//    url: 'mongodb://localhost:27017/dataedge'
+//});
 
-
-const storage = require('multer-gridfs-storage')({
-    url: 'mongodb://localhost:27017/dataedge'
-});
-
-const upload = multer({ storage: storage });
+//const upload = multer({ storage: storage });
 //var storage = multer.diskStorage({
 //    destination: function (req, file, callBack) {
 //        callBack(null, '/tmp/my-uploads')
@@ -23,23 +21,40 @@ const upload = multer({ storage: storage });
 //        cb(null, file.fieldname + '-' + Date.now())
 //    }
 //})
+//upload.single('fileName'),
 
-router.use(fileUpload())
+//router.use(fileUpload())
 
-router.post('/registerConsultant', upload.single('fileName'), function (req, res) {
-    console.log(req.file)
-    console.log("entered the r egister consultant route..!!")
-    new consultantModel({
-        consultantName: req.body.consultantName
-    }).save(function (success) {
-       
-         console.log("successfully add file..!!")
+router.post('/registerConsultant', function (req, res) {
+    console.log("entered the r egister consultant route..!!")      
+    console.log(req.body)
+    consultantApi.addConsultant( req.body, function (success) {
+        console.log("entered the client api..!!")
+             res.send("successfully added member......!!!!")
+        })
+})
 
+router.get('/getConsultantDetails', function (req, res) {
+    consultantApi.getConsultant(function (result) {
+        res.send(result)
     })
-    //console.log(req.file).
-    //consultantApi.addConsultant(req.file, req.body, function () {
-    //        console.log("entered the client api..!!")
-    //    })
+})
+
+router.get('/getReqConsultantDetails/:Id', function (req, res) {
+    console.log("entered the grtReqConsultant route...!!!")
+    consultantApi.grtReqConsultant(req,function (result) {
+      res.send(result)
+    })
+
+})
+
+router.delete('/deleteReqClient/:Id', function (req, res) {
+    console.log("entered the delete route..!!")
+    consultantApi.deleteReqClient(req, function (err,result) {
+        if (err) console.log("error occurred...!!!")
+        else res.send("Deleted Consultant Successfully..!!")
+    })
+
 })
 
 
