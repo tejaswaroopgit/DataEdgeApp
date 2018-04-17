@@ -2,14 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\client",
-    "\\client\\Directives",
     "\\client\\partials",
+    "\\client\\partials\\clients",
     "\\client\\partials\\consultantRegister",
     "\\server",
     "\\server\\Api",
     "\\server\\models",
     "\\server\\routes"
   ],
-  "SelectedNode": "\\server\\app.js",
+  "SelectedNode": "\\client\\index.html",
   "PreviewInSolutionExplorer": false
 }

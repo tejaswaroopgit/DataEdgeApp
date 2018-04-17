@@ -9,22 +9,29 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  
+<body id="body">
+
 
     <div class="container">
-        <nav-bar></nav-bar>
-        <div ng-view> </div>
+        <div class="row">
+            <div class="col-xs-12 ">
+                <nav-bar></nav-bar>
+                <ng-view></ng-view>
+            </div>
+        </div>
     </div>
     <!-- scripts -->
     <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
     <script src="./main.js"></script>
     <script src="./services.js"></script>
     <script src="./controllers.js"></script>
     <script src="./Directives/directive.js"></script>
     <script src="./partials/consultantRegister/consultantRegisterCtrl.js"></script>
+    <script src="./partials/clients/clientsCtrl.js"></script>
+
 </body>
 </html>

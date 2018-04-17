@@ -4,3 +4,9 @@ float:right;
 margin-bottom:20px;
 margin-right:100px
 }
+body {
+    background: url("./Images/1.jpg");
+    background-repeat: no-repeat;
+   
+
+}

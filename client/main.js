@@ -36,6 +36,16 @@ myApp.config(function ($routeProvider) {
           controller:'consultantRegisterCtrl',
           access: { restricted: true }
       })
+      .when('/clientsList', {
+          templateUrl: 'partials/clients/clientsListpage.html',
+          controller: 'clientsCtrl',
+          access: { restricted: true }
+      })
+      .when('/addEditClients', {
+          templateUrl: 'partials/clients/clientsAddEdit.html',
+          controller: 'clientsCtrl',
+          access: { restricted: true }
+      })
     .otherwise({
       redirectTo: '/'
     });
