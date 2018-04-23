@@ -62,4 +62,15 @@ consultantFun.prototype.grtReqConsultant = function (findIdInfo,callBack) {
 
 }
 
+consultantFun.prototype.grtSearchDetails = function (findInfo, callBack) {
+    console.log("entered the search function..!!")
+    console.log(findInfo.params.location + findInfo.params.domain + findInfo.params.visa)
+    consultantModel.find({ $or: [{ consultantLocation: findInfo.params.location },{ consultantDomain: findInfo.params.domain },  { consultantVisaStatus: findInfo.params.visa }] }, function (err, result) {
+        if (err) console.log("error occurred while fetching the data...!!!" + err)
+        else callBack(result)
+      })
+}
+
+
+
 module.exports = new consultantFun();

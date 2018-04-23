@@ -36,9 +36,9 @@ myApp.config(function ($routeProvider) {
           controller:'consultantRegisterCtrl',
           access: { restricted: true }
       })
-      .when('/clientsList', {
-          templateUrl: 'partials/clients/clientsListpage.html',
-          controller: 'clientsCtrl',
+      .when('/searchConsultant', {
+          templateUrl: 'partials/clients/searchPage.html',
+          controller: 'searchCtrl',
           access: { restricted: true }
       })
       .when('/addEditClients', {
