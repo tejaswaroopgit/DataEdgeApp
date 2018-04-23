@@ -123,8 +123,8 @@ angular.module('myApp').controller('homeController',
                 $location.path('/');
             }
 
-            $scope.goToClientsPage = function () {
-                $location.path('/clientsList')
+            $scope.goToConsultantSearchPage = function () {
+                $location.path('/searchConsultant')
             }
 
             //$scope.goToClientsAddEditPage = function () {

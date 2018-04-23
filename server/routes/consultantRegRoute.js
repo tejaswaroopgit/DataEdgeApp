@@ -57,5 +57,16 @@ router.delete('/deleteReqClient/:Id', function (req, res) {
 
 })
 
+router.get('/searchConsultants/:location/:domain/:visa', function (req, res) {
+    console.log("entered the search route..!!")
+    consultantApi.grtSearchDetails(req, function (result) {
+        res.send(result)
+        console.log(result)
+        //if (err) console.log("error occurred..!!")
+        //else res.send(result)
+    })
+
+})
+
 
     module.exports = router;

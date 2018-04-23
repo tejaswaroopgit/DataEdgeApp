@@ -28,7 +28,7 @@ myApp.controller('consultantRegisterCtrl', function ($scope, $location, consulta
 
             $scope.curPage = 1,
                 $scope.itemsPerPage = 100,
-                $scope.maxSize = 5;
+                $scope.maxSize = 100;
 
             $scope.numOfPages = function () {
                 return Math.ceil($scope.consultant.length / $scope.itemsPerPage);

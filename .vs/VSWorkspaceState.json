@@ -10,6 +10,6 @@
     "\\server\\models",
     "\\server\\routes"
   ],
-  "SelectedNode": "\\client\\index.html",
+  "SelectedNode": "\\server\\app.js",
   "PreviewInSolutionExplorer": false
 }
